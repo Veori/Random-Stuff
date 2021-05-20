@@ -1,0 +1,32 @@
+onst puppeteer = require('puppeteer');
+
+(async () => {
+    const browser = await puppeteer.launch({ headless: false });
+    const page = await browser.newPage();
+    await page.setViewport({   width: 2560,   height: 1440,   deviceScaleFactor: 1, });
+    await page.goto('https://discord.com/');
+    await page.screenshot({ path: 'example.png' });
+
+    await page.waitForTimeout(2000)
+
+    //await browser.close();
+    
+    await page.click("#app-mount > div > div > div.grid-3Ykf_K.heroBackground-3m0TRU > div.row-3wW-Fx.header-Y5-yn4.colorSchemeWhite-33VuSr > header.wrapper-vInhSw.wrapperDesktop-1VrZRb > nav > div.appButton-2wSXh- > a")
+    await page.waitForTimeout(2000)
+    let u = await page.$('#app-mount > div.app-1q1i1E > div > div.leftSplit-1qOwnR.nonEmbeddedLeftSplit-3z6mge > div > div > form > div > div > div.mainLoginContainer-1ddwnR > div.block-egJnc0.marginTop20-3TxNs6 > div.marginBottom20-32qID7 > div > div.inputWrapper-31_8H8.inputWrapper-3aw2Sf > input')
+    await u.type("")
+    let f = await page.$('#app-mount > div.app-1q1i1E > div > div.leftSplit-1qOwnR.nonEmbeddedLeftSplit-3z6mge > div > div > form > div > div > div.mainLoginContainer-1ddwnR > div.block-egJnc0.marginTop20-3TxNs6 > div:nth-child(2) > div > input')
+    await f.type("")
+    await page.click("#app-mount > div.app-1q1i1E > div > div.leftSplit-1qOwnR.nonEmbeddedLeftSplit-3z6mge > div > div > form > div > div > div.mainLoginContainer-1ddwnR > div.block-egJnc0.marginTop20-3TxNs6 > button.marginBottom8-AtZOdT.button-3k0cO7.button-38aScr.lookFilled-1Gx00P.colorBrand-3pXr91.sizeLarge-1vSeWK.fullWidth-1orjjo.grow-q77ONN")
+    await page.waitForTimeout(5000)
+    await page.click("#app-mount > div.app-1q1i1E > div > div.layers-3iHuyZ.layers-3q14ss > div > div > nav > ul > div.scroller-2TZvBN.none-2Eo-qx.scrollerBase-289Jih > div:nth-child(3) > div:nth-child(3) > div:nth-child(2) > div > div > svg > foreignObject > div")
+    await page.waitForTimeout(2000)
+    await page.click("#channels > div > div:nth-child(28) > div > div > div > a > div.name-23GUGE.overflow-WK9Ogt")
+    await page.waitForTimeout(5000)
+    await page.click("#app-mount > div.app-1q1i1E > div > div.layers-3iHuyZ.layers-3q14ss > div > div > div > div.content-98HsJk > div.sidebar-2K8pFh.hasNotice-1XRy4h > section > div.wrapper-24pKcD > div > div.flex-1xMQg5.flex-1O1GKY.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignCenter-1dQNNs.noWrap-3jynv6 > div.flex-1xMQg5.flex-1O1GKY.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignStretch-DpGPf3.noWrap-3jynv6 > button")    
+    await page.waitForTimeout(5000)
+    await page.click('#app-mount > div.app-1q1i1E > div > div.layers-3iHuyZ.layers-3q14ss > div > div > nav > ul > div.scroller-2TZvBN.none-2Eo-qx.scrollerBase-289Jih > div:nth-child(3) > div:nth-child(3) > div:nth-child(2) > div > div > svg > foreignObject > div', {
+        button: 'right',
+      });
+      
+})()
